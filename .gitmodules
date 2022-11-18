@@ -1,0 +1,6 @@
+[submodule "userLocationFront"]
+	path = userLocationFront
+	url = git@github.com:b-mountassir/user-location-front.git
+[submodule "userLocationBack"]
+	path = userLocationBack
+	url = https://github.com/b-mountassir/user-location-back.git
