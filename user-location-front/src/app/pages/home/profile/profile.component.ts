@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionStorageService } from 'src/app/services/front/session-storage.service';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  constructor() { }
+  userData: any;
+  constructor(private sessionStorageService: SessionStorageService) { }
 
   ngOnInit() {
+    this.userData = JSON.parse(this.sessionStorageService.getKey('USER'));
   }
 
 }

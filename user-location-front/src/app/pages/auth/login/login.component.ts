@@ -35,8 +35,9 @@ export class LoginComponent implements OnInit {
     
     this.authService.login(user).subscribe(
       (res: any) => {
+        const currentUser = {id: res.data.id, email: res.data.email, createdAt: res.data.created_at}
         this.sessionStorageService.setKey('AUTH_TOKEN', res.accessToken);
-        this.sessionStorageService.setKey('USER_ID', res.data.id);
+        this.sessionStorageService.setKey('USER', JSON.stringify(currentUser));
         this.loading = true;
       },
       (error) => {
