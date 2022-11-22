@@ -9,13 +9,23 @@ import { RegisterComponent } from './pages/auth/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { InterceptorProviders  } from './@core/http-interceptor.service';
+import { ProfileComponent } from './pages/home/profile/profile.component';
+import { FiltersComponent } from './pages/home/filters/filters.component';
+import { QuestionComponent } from './pages/home/question/question.component';
+import { QuestionListComponent } from './pages/home/question/question-list/question-list.component';
+import { QuestionSearchBarComponent } from './pages/home/question/question-search-bar/question-search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent,
+    FiltersComponent,
+    QuestionComponent,
+    QuestionListComponent,
+    QuestionSearchBarComponent
   ],
   imports: [
     BrowserModule,
