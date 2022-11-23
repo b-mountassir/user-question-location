@@ -1,6 +1,5 @@
-export interface Answer {
-    id?: number;
-    content: string;
+import { Post } from "./abstract/post";
+
+export interface Answer extends Post {
     questionId: string;
-    userId: string;
 }

@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionSearchBarComponent implements OnInit {
 
+  query: string = ' ';
   constructor() { }
 
   ngOnInit() {
+  }
+
+  search(event): string {
+    this.query += event.key;
+    console.log(this.query);
+    
+    return event
   }
 
 }

@@ -31,7 +31,6 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     let user: User = {email: this.f.email.value, password: this.f.password.value};
-    console.log(user);
     
     this.authService.register(user).subscribe(
       (res: any) => {

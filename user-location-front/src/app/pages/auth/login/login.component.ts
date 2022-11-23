@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     let user: User = {email: this.f.email.value, password: this.f.password.value};
-    console.log(user);
     
     this.authService.login(user).subscribe(
       (res: any) => {

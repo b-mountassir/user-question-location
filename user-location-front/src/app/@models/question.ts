@@ -1,7 +1,7 @@
-export interface Question {
-    id?: number;
+import { Post } from "./abstract/post";
+
+export interface Question extends Post{
     title: string;
-    content: string;
     location: string;
-    userId: string;
+    is_liked: boolean;
 }

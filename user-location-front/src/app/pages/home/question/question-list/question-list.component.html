@@ -1,3 +1,12 @@
-<p>
-  question-list works!
-</p>
+<table class="table table-striped">
+  <tbody>
+      <tr *ngFor="let question of questionList; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ question.title }}</td>      
+        <td>{{ question.created_at | date }}</td>
+        <td>
+          <input type="checkbox" [checked]="question.is_liked" (click)="addFavQuestion(question.id)">
+        </td>
+      </tr>
+  </tbody>
+</table>
