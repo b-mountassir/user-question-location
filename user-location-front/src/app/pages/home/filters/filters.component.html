@@ -3,7 +3,12 @@
     <h4 class="text-center">My filters</h4>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a class="nav-link text-center">sample link</a>
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location" (input)="locationEvent($event)">
+      </li>
+      <li class="nav-item">
+        <label for="favorite">Favorite</label>
+        <input type="checkbox" name="favorite" id="favorite" (change)="favoriteEvent($event)">
       </li>
     </ul>
   </div>

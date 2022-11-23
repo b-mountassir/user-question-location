@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-striped overflow-auto vh-25 d-block" (scroll)="onTableScroll($event)">
   <tbody>
       <tr *ngFor="let question of questionList; let i = index">
         <th scope="row">{{ i + 1 }}</th>

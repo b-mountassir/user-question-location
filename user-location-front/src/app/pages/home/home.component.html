@@ -1,7 +1,7 @@
 <div class="container row">
   <div class="d-flex flex-column flex-shrink-0 p-3 col col-lg-4">
     <app-profile></app-profile>
-    <app-filters></app-filters>
+    <app-filters (filtersEmitter)="getFilters($event)"></app-filters>
   </div>
   <div class="main-container col col-lg-8 p-3 mt-3">
     <app-question [questionList]="questions"></app-question>

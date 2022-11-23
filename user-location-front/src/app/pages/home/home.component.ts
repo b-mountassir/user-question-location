@@ -10,10 +10,33 @@ import { QuestionService } from 'src/app/services/back/question.service';
 })
 export class HomeComponent implements OnInit {
   questions: Question[] = [];
-  filter: Filter = {location: '',favorite: false};
+  defaultQuestions: Question[] = [];
+  likedQuestions: Question[] = []
+  filters: Filter = {location: '',favorite: false};
   constructor(private questionService: QuestionService) { }
 
   ngOnInit() {
+    this.getQuestions()
+  }
+
+  getFilters(event) {
+    this.filters = event;
+    if (this.filters.favorite){
+      this.getFavQuestions()
+    }else {
+      this.getQuestions()
+    }
+  }
+  
+  getFavQuestions() {
+    return this.questionService.getFavQuestions(this.filters).subscribe(
+      (data) => {
+        this.questions = data
+      }
+    )
+  }
+
+  getQuestions() {
     this.questionService.getQuestions().subscribe(
       (data) => {
         this.questions = data;
