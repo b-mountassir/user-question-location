@@ -5,7 +5,7 @@ import { Answer } from 'src/app/@models/answer';
 import { Filter } from 'src/app/@models/filter';
 import { Question } from 'src/app/@models/question';
 
-const QUESTIONS_URL = 'questions';
+const QUESTIONS_URL = 'questions/';
 const FAVORITE_QUESTIONS_URL = 'liked_questions/';
 const ANSWERS_URL = 'answers/'
 
@@ -50,6 +50,13 @@ export class QuestionService {
           offset: offset
         }
       }
+    )
+  }
+
+  createQuestion(question) {
+    return this.http.post(
+      QUESTIONS_URL + 'new',
+      question
     )
   }
 

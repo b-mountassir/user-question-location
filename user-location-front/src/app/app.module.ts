@@ -16,6 +16,7 @@ import { QuestionListComponent } from './pages/home/question/question-list/quest
 import { QuestionSearchBarComponent } from './pages/home/question/question-search-bar/question-search-bar.component';
 import { QuestionViewComponent } from './pages/home/question/question-list/question-view/question-view.component';
 import { NewQuestionComponent } from './pages/home/question/new-question/new-question.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,11 @@ import { NewQuestionComponent } from './pages/home/question/new-question/new-que
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAL3uUTTiURMYWUI1Gofl-YiYObqb4G-Qc',
+      libraries: ['places']
+    })
   ],
   providers: [InterceptorProviders],
   bootstrap: [AppComponent]

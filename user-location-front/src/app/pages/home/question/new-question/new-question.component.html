@@ -1,0 +1,13 @@
+<form [formGroup]="formData" (ngSubmit)="onSubmit()">
+  <input type="text" class="form-control" name="title" formControlName="title" aria-label="Text input with segmented dropdown button">
+  <input type="text" class="form-control" name="content" formControlName="content" aria-label="Text input with segmented dropdown button">
+  <agm-map 
+    [latitude]="latitude" 
+    [longitude]="longitude" 
+    [zoom]="zoom" style="height: 300px;width: 100%;">
+    <agm-marker 
+    [latitude]="latitude" 
+    [longitude]="longitude"></agm-marker>
+  </agm-map>
+  <button type="button" class="btn btn-outline-secondary text-center" type="submit">Post new question</button>
+</form>
