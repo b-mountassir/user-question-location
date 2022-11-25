@@ -1,0 +1,32 @@
+<p>
+  {{ question?.id }}
+  {{ question?.title }}
+  {{ question?.content }}
+  {{ question?.location }}
+</p>
+<div *ngIf="answers">
+  <table class="d-block overflow-auto table table-striped vh-25" >
+    <tbody>
+        <tr *ngFor="let answer of answers; let i = index"> 
+          <td>{{ i + 1 }}</td>    
+          <td>{{answer?.content}}</td>
+        </tr>
+        <tr>
+          <a (click)="onLoadMore()">Load more</a>
+        </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <div class="input-group">
+            <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+              <input type="text" class="form-control" name="content" formControlName="content" aria-label="Text input with segmented dropdown button">
+              <button type="button" class="btn btn-outline-secondary" type="submit">Answer</button>
+            </form>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
