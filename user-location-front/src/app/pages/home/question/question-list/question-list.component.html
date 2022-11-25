@@ -2,7 +2,7 @@
   <tbody>
       <tr *ngFor="let question of questionList; let i = index">
         <th scope="row">{{ i + 1 }}</th>
-        <td>{{ question.title }}</td>      
+        <td (click)="onQuestionView(question)">{{ question.title }}</td>      
         <td>{{ question.created_at | date }}</td>
         <td>
           <input type="checkbox" [checked]="question.is_liked" (click)="addFavQuestion(question.id)">
@@ -10,3 +10,5 @@
       </tr>
   </tbody>
 </table>
+
+<app-question-view [question]="currentQuestion" [answers]="answers" [offset]="offset" *ngIf="currentQuestion"></app-question-view>

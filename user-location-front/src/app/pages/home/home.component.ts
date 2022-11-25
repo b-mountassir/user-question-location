@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
   }
 
   getQuestions() {
-    this.questionService.getQuestions().subscribe(
+    this.questionService.getQuestions(null, '0').subscribe(
       (data) => {
         this.questions = data;
       }

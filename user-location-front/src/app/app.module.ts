@@ -14,6 +14,8 @@ import { FiltersComponent } from './pages/home/filters/filters.component';
 import { QuestionComponent } from './pages/home/question/question.component';
 import { QuestionListComponent } from './pages/home/question/question-list/question-list.component';
 import { QuestionSearchBarComponent } from './pages/home/question/question-search-bar/question-search-bar.component';
+import { QuestionViewComponent } from './pages/home/question/question-list/question-view/question-view.component';
+import { NewQuestionComponent } from './pages/home/question/new-question/new-question.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { QuestionSearchBarComponent } from './pages/home/question/question-searc
     FiltersComponent,
     QuestionComponent,
     QuestionListComponent,
-    QuestionSearchBarComponent
+    QuestionSearchBarComponent,
+    QuestionViewComponent,
+    NewQuestionComponent
   ],
   imports: [
     BrowserModule,
